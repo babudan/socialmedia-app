@@ -166,8 +166,9 @@ const getfollowers = async function (req,res){
         if(!finduser) return res.status(400).send({ status: false, message: "This username is not exist" });
 
         let listoffollowers = finduser.followers;
+        let newuser = await userModel.find({ username : {$in : listoffollowers}}).select({fullname : 1 ,username : 1 ,_id : 0}); 
         
-        return res.status(200).send({ status : true ,followers: listoffollowers ,message : "you got the list of followers"})
+        return res.status(200).send({ status : true ,followers: newuser ,message : "you got the list of followers"})
 
     }
     catch (error){
@@ -186,8 +187,9 @@ const getfollowing = async function (req,res){
         if(!finduser) return res.status(400).send({ status: false, message: "This username is not exist" });
 
         let listoffollowings = finduser.followings;
-        
-        return res.status(200).send({ status : true ,followings : listoffollowings ,message : "you got the list of followings"})
+        let olduser = await userModel.find({ username : {$in : listoffollowings}}).select({fullname : 1 ,username : 1 ,_id : 0});
+        console.log(olduser);
+        return res.status(200).send({ status : true ,followings : olduser ,message : "you got the list of followings"})
 
     }
     catch (error){
