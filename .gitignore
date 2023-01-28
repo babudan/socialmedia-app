@@ -1,0 +1,4 @@
+/node_modules
+
+
+# git rm --cached -r node_modules/ for ignore the files
