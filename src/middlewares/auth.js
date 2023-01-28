@@ -12,7 +12,7 @@ const authentication = async function (req, res, next) {
 
         let bearerToken = token.split(' ')[1]
 
-        jwt.verify(bearerToken, 'om,arsh,suraj', function (error, decoded) {
+        jwt.verify(bearerToken, 'arindam123', function (error, decoded) {
             if (error) {
                 return res.status(401).send({ status: false, message: 'please provide valid token' })
             }
