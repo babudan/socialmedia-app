@@ -1,0 +1,134 @@
+.navbar {
+    position: relative;
+    background: rgba(0, 212, 255, 1);
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 1px 2px 5px lightgray;
+}
+
+.logo {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+.nav-side-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 0 10px;
+    width: 70vw;
+    justify-content: end;
+    margin-right: 35px;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-links {
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    transition: all 0.3s ease-out;
+}
+
+.nav-links:hover {
+    background-color: #000;
+    border-radius: 5px;
+}
+
+.fa-bars {
+    color: #fff;
+}
+
+.nav-links-button {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .nav-side-menu {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        height: calc(100vh - 85px);
+        position: absolute;
+        margin-top: 0;
+        top: 85px;
+        border: 2px solid #ececee;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        justify-content: flex-start;
+    }
+
+    .nav-side-menu.start {
+        background: #fff;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 1.5rem;
+        width: 100%;
+        color: #000;
+        display: table;
+        transition: 0s;
+    }
+
+    .nav-links:hover {
+        color: #fff;
+    }
+
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(25%, 50%);
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .fa-times {
+        color: #fff;
+        font-size: 2rem;
+    }
+
+    .nav-links-button {
+        display: block;
+        padding: 12px 30px;
+        margin: 25px auto;
+        border-radius: 10px;
+        background: #000;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.3rem;
+    }
+
+    button {
+        display: none;
+    }
+
+    .nav-items {
+        height: auto;
+    }
+}

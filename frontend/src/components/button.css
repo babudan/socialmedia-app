@@ -1,0 +1,15 @@
+.btn-dark {
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #222;
+    background-color: #222;
+}
+
+.btn-dark:hover {
+    background-color: transparent;
+    color: white;
+    transition: all 0.2s ease-in;
+}
